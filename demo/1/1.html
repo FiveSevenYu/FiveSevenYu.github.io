@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>exp2</title>
+	<style>
+		body{
+			margin:0 auto;
+			padding:0;
+			background-color:#f9f9f9;
+		}
+		.cardfan{
+			width:300px;
+			height:200px;
+			margin:2rem auto;
+		}
+		.cardfan>img{
+			position:absolute;
+			border: 10px solid #FFFFFF;
+			box-sizing: border-box;
+			box-shadow:4px 4px 3px rgba(0,0,0,0.2);
+			transform-origin: center 400px;
+			transition: transform .7s ease;
+		}
+		.cardfan img:first-child{
+			transform: rotate(5deg);
+		}
+		.cardfan img:last-child{
+			transform:rotate(-5deg);
+		}
+		.cardfan:hover img:first-child{
+			transform: rotate(25deg);
+		}
+		.cardfan:hover img:last-child{
+			transform: rotate(-25deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="cardfan">
+		<img src="image/未标题-1.png" height="200" width="300" alt="">
+		<img src="image/未标题-2.png" height="200" width="300" alt="">
+		<img src="image/未标题-3.png" height="200" width="300" alt="">
+	</div>
+</body>
+</html>

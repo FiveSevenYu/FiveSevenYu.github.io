@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>漂浮幽灵动画</title>
+	<style type="text/css">
+		html{cursor: url(image/cursor.png),pointer;}
+		body{
+			background: #90C0F1;
+			position: relative;
+			overflow: hidden;
+			margin:0 auto;
+		}
+		.ghost{
+			margin:100px auto;
+			width: 160px;
+			height: 180px;
+			position: relative;
+			animation: cbody 1s infinite alternate;
+			-webkit-animation: cbody 1s infinite alternate;
+		}
+		.ghostBody{
+			background: #FFFFFF;
+			width: 87.5%;
+			height: 100%;
+			border-radius: 100% 100% 0 0;
+			position:relative;
+		}
+		.ghostEyel{
+			height: 11.11%;
+			width: 9.375%;
+			border-radius: 100%;
+			background: #061E74;
+			border: 2px solid #061E74;
+			box-shadow:inset -2px -2px #fff;
+			position: absolute;
+			top: 60px;
+			left: 45px;
+		}
+		.ghostEyer{
+			height: 11.11%;
+			width: 9.375%;
+			border-radius: 100%;
+			background: #061E74;
+			border: 2px solid #061E74;
+			box-shadow:inset -2px -2px #fff;
+			position: absolute;
+			top: 60px;
+			right: 50px;
+		}
+		.ghostMouth{
+			width:9.375%;
+			height: 11.11%;
+			border-radius: 100%;
+			border: 2px solid #061E74;
+			position: absolute;
+			top: 90px;
+			right: 70px;
+		}
+		.ghostWave{
+			position: absolute;
+			width: 87.5%;
+			height: 20px;
+			background-size: 25px 20px;
+			background-image:radial-gradient(circle at 50% 0%,#fff 77%,transparent 77%);
+		}
+		.ghostShadow{
+			width: 87.5%;
+			height: 10px;
+			border-radius: 100%;
+			background:#061E74;
+			margin-top: 70px;
+			opacity: 0.3;
+			animation: shadow 1s infinite alternate;
+			-webkit-animation: shadow 1s infinite alternate;
+		}
+@keyframes shadow{
+	0%{margin-top: 70px;opacity: 0.3;}
+	100%{margin-top: 100px;opacity: 0.1;}
+}
+@-webkit-keyframes shadow{
+	0%{margin-top: 70px;opacity: 0.3;}
+	100%{margin-top: 100px;opacity: 0.1;}
+}
+@keyframes cbody{
+	0%{margin-top: 100px;}
+	100%{margin-top: 70px;}
+}
+@-webkit-keyframes cbody{
+	0%{margin-top: 100px;}
+	100%{margin-top: 70px;}
+}
+
+
+
+
+	</style>
+</head>
+<body>
+	<div class="ghost">
+		<div class="ghostBody"></div>
+		<div class="ghostEyel"></div>
+		<div class="ghostEyer"></div>
+		<div class="ghostMouth"></div>
+		<div class="ghostWave"></div>
+		<div class="ghostShadow"></div>
+	</div>
+	
+</body>
+</html>

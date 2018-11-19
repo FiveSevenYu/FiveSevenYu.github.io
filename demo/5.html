@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+      ul{
+      display:flex;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform:translate(-50%,-50%);
+    }
+    li{
+      position: relative;
+      list-style-type: none;
+      padding: 10px;
+      font-size: 12px;
+      line-height: 1;
+      cursor: pointer;
+    }
+    li::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 100%;
+      width: 0;
+      height: 100%;
+      border-bottom: 2px solid #000;
+      transition: .3s all linear;
+    }
+
+    li:hover::before {
+      width: 100%;
+      top: 0;
+      left: 0;
+      transition-delay: 0.2s;
+      z-index: -1;
+    }
+
+    li:hover ~ li::before{
+      left: 0;
+    }
+    li:active{
+      background:#000;
+      color:#fff;
+    }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li>不可思议的CSS</li>
+    <li>导航栏</li>
+    <li>光标小下划线跟随</li>
+    <li>PUER CSS</li>
+    <li>Coco</li>
+  </ul>
+  <!-- 
+    导航栏的li宽度是不固定的
+    当从导航的左侧li移向右侧li，下划线从左往右移动。同理，当从导航的右侧li移向左侧li，下滑先从右往左移动。 
+  -->
+</body>
+</html>

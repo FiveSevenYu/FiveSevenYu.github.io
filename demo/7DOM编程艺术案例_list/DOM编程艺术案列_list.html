@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>list</title>
+	<style type="text/css">
+		#slideshow{
+			width: 480px;
+			height: 650px;
+			position: relative;
+			overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+	<h1>Web Design</h1>
+	<p>these are the things you should know .</p>
+	<ol id="linklist">
+		<li>
+			<a href="structure.html">structure</a>
+		</li>
+		<li>
+			<a href="presentation.html">presentation</a>
+		</li>
+		<li>
+			<a href="behavior.html">behavior</a>
+		</li>
+	</ol>
+	<div id="slideshow">
+		<img src="images/auto3.jpg" alt="building blocks of web design" id="preview" />
+	</div>
+	<script>
+		addLoadEvent(prepareSlideshow);
+		function addLoadEvent(func)
+		{
+			var oldonload = window.onload;
+			if(typeof window.onload != 'function')
+				{
+					window.onload = func;
+				}
+			else
+				{
+					window.onload = function()
+					{
+						oldonload();
+						func;
+					}
+				}
+		}
+		function moveElement(elementID,final_x,final_y,interval)
+		{
+			if (!document.getElementById)return false;
+			if(!document.getElementById(elementID))return false;
+			var elem = document.getElementById(elementID);
+			if(elem.movement){
+				clearTimeout(elem.movement);
+			}
+			var xpos = parseInt(elem.style.left);
+			var ypos = parseInt(elem.style.top);
+			if(xpos == final_x && ypos == final_y)return true;
+			if(xpos<final_x){
+				dist = Math.ceil((final_x - xpos)/10);
+				xpos += dist;
+			}
+			if(xpos>final_x){
+				dist = Math.ceil((xpos - final_x)/10);
+				xpos -=dist;
+			}
+			if(ypos<final_y){
+				dist = Math.ceil((final_y - ypos)/10);
+				ypos +=dist;
+			}
+			if(ypos>final_y){
+				dist = Math.ceil((ypos - final_y)/10);
+				ypos -=dist;
+			}
+			elem.style.left = xpos +"px";
+			elem.style.top = ypos +"px";
+			var repeat = "moveElement('"+elementID+"',"+final_x+","+final_y+","+interval+")";
+			elem.movement = setTimeout(repeat,interval)
+		}
+		function prepareSlideshow()
+		{
+			//确保浏览器支持DOM方法
+			if(!document.getElementsByTagName)return false;
+			if(!document.getElementById)return false;
+			//确保元素存在
+			if(!document.getElementById("linklist"))return false;
+			if(!document.getElementById("preview"))return  false;
+			var preview = document.getElementById("preview");
+			preview.style.position = "absolute";
+			preview.style.left = "0px";
+			preview.style.top = "0px";
+			var list = document.getElementById("linklist");
+			var links = list.getElementsByTagName("a");
+			//为mouseover事件添加动画效果
+			links[0].onmouseover = function()
+			{
+				moveElement("preview",-480,0,10)	
+			}
+			links[1].onmouseover = function()
+			{
+				moveElement("preview",-960,0,10)	
+			}
+			links[2].onmouseover = function()
+			{
+				moveElement("preview",-1400,0,10)	
+			}
+		}
+	</script>
+	
+</body>
+</html>

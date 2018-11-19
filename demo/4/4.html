@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>exp5</title>
+	<style type="text/css" >
+		*{
+			margin:0 auto;
+			padding:0;
+
+		}
+		body{
+			background-color:#E4E1E1;
+		}
+		.demo,.img,.mask,.border{
+			width:300px;
+			height:300px;
+			border-radius:50%;
+		}
+		.demo{
+			position:relative;
+			display:block;
+			margin:100px auto;
+		}
+		.img{
+			background-size:cover;
+			background-position:50% 50%;
+
+		}
+		.mask,.border{
+				position:absolute;
+				left:0;
+				top:0;
+		}
+		.mask{
+			text-align:center;
+			color:rgba(255, 255, 255, 0);
+		}
+		.info{
+			margin-top:50%;
+			transform: translateY(-50%);
+		}
+		.border{
+			border:10px solid #FFFFFF;
+			border-left-color:#03FE03;
+			border-top-color:#03FE03;
+			box-sizing: border-box;
+			transition:all .5s ease-in;
+		}
+		.demo:hover .mask{
+			background-color:rgba(0, 0, 0, .5);
+			color:rgba(255, 255, 255,1);
+			transition:all .5s ease-in;
+		}
+		.demo:hover .border{
+			transform:rotate(180deg);
+
+
+		}
+		
+
+	</style>
+</head>
+<body>
+	<a href="#" class="demo">
+		<div class="img" style="background-image:url(images/未标题-2.png) "></div>
+		<div class="mask">
+			<div class="info">
+				<h3>BEATIFUL DAY</h3>
+				<p>Description goes here</p>
+			</div>
+		</div>
+		<div class="border"></div>
+	</a>
+</body>
+</html>
