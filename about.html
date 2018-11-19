@@ -1,36 +1,48 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
 </head>
+
 <body>
-    <div class="wrapper">
-        <button class="like-btn">
-            <span class="like-text">点赞</span>
-            <span>👍</span>
-        </button>
-        <div class="demo">
-          <ul>
-            <li><a href="./demo/1/1.html">鼠标悬停动画效果</a></li>
-          </ul>
-        </div>
+  <div class="wrapper">
+    <button class="like-btn">
+      <span class="like-text">点赞</span>
+      <span>👍</span>
+    </button>
+    <div class="demo">
+      <ul>
+        <li><a href="./demo/0.html">loading加载动画00</a></li>
+        <li><a href="./demo/1/1.html">鼠标悬停动画效果00</a></li>
+        <li><a href="./demo/2.html">loading加载动画01</a></li>
+        <li><a href="./demo/3.html">loading加载动画02</a></li>
+        <li><a href="./demo/4/4.html">鼠标悬停动画效果01</a></li>
+        <li><a href="./demo/6.html">漂浮幽灵动画</a></li>
+        <li><a href="./demo/7DOM编程艺术案例_list/DOM编程艺术案列_list.html">DOM编程艺术案列_list</a></li>
+        <li><a href="./demo/8ToolTips/ToolTips.html">ToolTips</a></li>
+        <li><a href="./demo/9轮播图/test.html">轮播图</a></li>
+        <li><a href="./demo/10瀑布流效果/index.html">瀑布流效果</a></li>
+        <li><a href="./demo/11照片墙/picturewall.html">照片墙</a></li>
+      </ul>
     </div>
-    <script>
-        const button = document.querySelector('.like-btn');
-        const buttonText = document.querySelector('.like-text');
-        var  isLiked =false;
-        button.addEventListener('click', function () {
-            isLiked = !isLiked;
-            if(isLiked){
-                buttonText.innerHTML = "取消"
-            }else{
-                buttonText.innerHTML = "点赞"
-            }
-        },false)
-    </script>
+  </div>
+  <script>
+    const button = document.querySelector('.like-btn');
+    const buttonText = document.querySelector('.like-text');
+    var isLiked = false;
+    button.addEventListener('click', function () {
+      isLiked = !isLiked;
+      if (isLiked) {
+        buttonText.innerHTML = "取消"
+      } else {
+        buttonText.innerHTML = "点赞"
+      }
+    }, false)
+  </script>
 </body>
+
 </html>
