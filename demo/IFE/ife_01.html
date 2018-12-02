@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ife_01制作一个简单的菜单动画效果</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #Btn {
+            outline: none;
+            border: 1px solid #ccc;
+        }
+        #Btn:active {
+            color: #fff;
+            background: rgb(65, 125, 201);
+        }
+        #transitionDiv {
+            width: 0;
+            height: 10px;
+            margin: 20px auto;
+            background: rgb(65, 125, 201);
+            transition: width 0.5s ease-out;
+        }
+        .container {
+            margin: 50px auto;
+            text-align: center;
+        }
+        button {
+            width: 100px;
+            height: 30px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="changeS">前端学院</div>
+        <div id="transitionDiv"></div>
+        <button id="Btn">切换样式</button>
+    </div>
+    <script type=text/javascript>
+        window.onload = function () {
+            let btn = document.getElementById("Btn"),
+                changeS = document.getElementById("changeS"),
+                transitionDiv = document.getElementById("transitionDiv"),
+                toggle = true;
+
+            btn.addEventListener('click', function () {
+                if (toggle) {
+                    changeS.style.color = 'rgb(65, 125, 201)';
+                    transitionDiv.style.width = "100px";
+                    toggle = false;
+                } else {
+                    changeS.style.color = '#000';
+                    transitionDiv.style.width = "0";
+                    toggle = true;
+                }
+            });
+        }
+    </script>
+</body>
+</html>

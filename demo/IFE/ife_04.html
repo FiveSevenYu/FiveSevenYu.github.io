@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Document</title>
+<style>
+    #container{
+        width:250px;
+        height:350px;
+        background-size:100%;
+
+        position: relative;
+    }
+    img{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        backface-visibility: hidden;
+        transition:transform 1s ease-out;
+    }
+    /*翻转反面图片*/
+    #NegativeImg{
+        transform:rotateY(180deg);
+    }
+    #container:hover #positiveImg{
+        transform:rotateY(180deg);
+    }
+    #container:hover #NegativeImg{
+        transform:rotateY(0deg);
+    }
+</style>
+</head>
+<body>
+    <div id="container">
+        <img id="positiveImg" src="images/ife_004正面.jpg" alt="ife_004正面">
+        <img id="NegativeImg" src="images/ife_004反面.jpg" alt="ife_004反面">
+    </div>
+</body>
+</html>

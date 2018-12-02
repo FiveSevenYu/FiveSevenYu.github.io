@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>No.6 - 利用 CSS animation 制作一个炫酷的 Slider</title>
+<style>
+/* 定义动画 */
+/* 位移-500px-0 */
+@keyframes displacementLeft{
+    from{
+      transform:translateX(-500px);
+    }
+    to{
+      transform:translateX(0);
+    }
+}
+  /* 位移top350px-0 */
+@keyframes displacementTop{
+  from{
+    transform: translateY(350px);
+  }
+  to{
+    transform: translateY(0);
+  }
+}
+  /* 放大0.1-1.0 */
+@keyframes enlarge{
+  from{
+      transform: scale(0.1);
+    }
+  to{
+      transform: scale(1);
+    }
+}
+  /* 缩小2.0-1.0 */
+@keyframes reduce{
+  from{
+    transform: scale(2);
+  }
+  to{
+    transform: scale(1);
+  }
+}
+  /* 旋转360-0&扩大0.1-1.0 */
+@keyframes end{
+  from{
+    transform: rotate(-360deg) scale(0.1);
+  }
+  to{
+    transform: rotate(0) scale(1.0);
+  }
+}
+
+.banner #item1:target img{
+animation: displacementLeft 0.5s ease-out;
+}
+.banner #item2:target img{
+  animation: displacementTop 0.5s ease-out;
+}
+.banner #item3:target img{
+  animation: enlarge 1s ease-in;
+}
+.banner #item4:target img{
+  animation: reduce 1s ease-out;
+}
+.banner #itme5:target img{
+  animation: end 0.7s ease-in-out;
+}
+
+#container{
+  height: 400px;
+  width: 600px;
+  position: relative;
+  overflow: hidden;
+  margin:30px auto;
+}
+.banner>div{
+  height: 400px;
+  width: 600px;
+  position: absolute;
+  z-index: 0;
+}
+.banner>div>img{
+  height: 400px;
+  width: 600px;
+}
+.banner div:target{
+  z-index: 1;
+}
+.banner div:not(:target){
+  z-index: 0;
+}
+.point{
+  height: 70px;
+  width: 550px;
+  position: absolute;
+  bottom: 15px;
+  left: 25px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.point a{
+  flex: 0 0 100px;
+  filter: brightness(0.5);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: filter 0.2s ease;
+}
+.point a:hover{
+  filter: brightness(1);
+}
+.point img{
+  height: 70px;
+  width: 100px;
+}
+</style>
+</head>
+<body>
+  <div id="container">
+    <div class="banner">
+      <div id="item1"><img  src="images/1.jpg" alt=""></div>
+      <div id="item2"><img  src="images/2.jpg" alt=""></div>
+      <div id="item3"><img  src="images/3.jpg" alt=""></div>
+      <div id="item4"><img  src="images/4.jpg" alt=""></div>
+      <div id="itme5"><img  src="images/5.jpg" alt=""></div>
+    </div>
+    <div class="point">
+      <a href="#item1" ><img src="images/1.jpg" alt=""></a>
+      <a href="#item2" ><img src="images/2.jpg" alt=""></a>
+      <a href="#item3" ><img src="images/3.jpg" alt=""></a>
+      <a href="#item4" ><img src="images/4.jpg" alt=""></a>
+      <a href="#item5" ><img src="images/5.jpg" alt=""></a>
+    </div>
+  </div>
+</body>
+</html>
