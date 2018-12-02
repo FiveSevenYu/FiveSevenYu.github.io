@@ -1,0 +1,31 @@
+body{
+  -moz-user-select: none;  
+}
+.Button{
+  display: block;
+  width: 100px;
+  height: 30px;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 700;
+  text-align: center;
+  background-color: yellowgreen;
+  color: green;
+  cursor: pointer;
+  
+  box-shadow: inset rgba(255, 254, 255, 0.6) 0 0.3em .3em,
+    inset rgba(0, 0, 0, .15)0 -0.1em .3em,
+    hsl(0, 0%, 60%)0 .1em 3px,
+    hsl(0, 0%, 45%) 0 .3em 1px,
+    rgba(0, 0, 0, .2) 0 .5em 5px;
+  border-radius: 1em 5em/5em 1em;
+  transition:all .2s ease-in-out;
+}
+.Button:active{
+  color: #fff;
+  box-shadow: inset rgba(255, 255, 255, 0.6) 0 0.3em .3em,
+    inset rgba(0, 0, 0, 0.2) 0 -0.1em .3em,
+    rgba(0, 0, 0, .4) 0 .1em 1px,
+    rgba(0, 0, 0, .2) 0 .2em 6px;
+    transform: translateY(.2em);
+}
