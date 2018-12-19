@@ -1,0 +1,157 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="FiveSeveN,hangdoudou0809@gamil.com"><title>CSS中的shadow阴影 · FiveSeveN</title><meta name="description" content="在CSS中要实现某元素的投影效果，有三个比较常见的属性。
+
+1.text-shadow2.box-shaodow3.filter:drop-shadow
+
+1.text-shadow我们先来讲text-shadow属性。1text-shadow:1px 1px 2px pink;
+上面四个参数分别是"><meta name="keywords" content="Hexo,HTML,CSS,javaScript,react"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">FiveSeveN</a></h3><div class="description"><p>脚踏实地，仰望星空.</p></div></div></div><ul class="social-links"><li><a href="https://twitter.com/www.baidu.com"><i class="fa fa-twitter"></i></a></li><li><a href="http://instagram.com/www.baidu.com"><i class="fa fa-instagram"></i></a></li><li><a href="http://weibo.com/p/1005053113078873/home?from=page_100505&amp;mod=TAB&amp;is_all=1#place"><i class="fa fa-weibo"></i></a></li><li><a href="http://facebook.com/www.baidu.com"><i class="fa fa-facebook"></i></a></li><li><a href="http://github.com/https://github.com/FiveSevenYu"><i class="fa fa-github"></i></a></li></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/about">关于</a></li><li><a href="/archives">归档</a></li><li><a href="/links">友链</a></li></div><div class="information"><div class="back_btn"><li><a onclick="window.history.go(-1)" class="fa fa-chevron-left"> </a></li></div><div class="avatar"><img src="/images/favicon.png"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>CSS中的shadow阴影</a></h3></div><div class="post-content"><p>在CSS中要实现某元素的投影效果，有三个比较常见的属性。</p>
+<blockquote>
+<p>1.text-shadow<br>2.box-shaodow<br>3.filter:drop-shadow</p>
+</blockquote>
+<h1 id="1-text-shadow"><a href="#1-text-shadow" class="headerlink" title="1.text-shadow"></a>1.text-shadow</h1><p>我们先来讲<code>text-shadow</code>属性。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">text-shadow</span><span class="selector-pseudo">:1px</span> 1<span class="selector-tag">px</span> 2<span class="selector-tag">px</span> <span class="selector-tag">pink</span>;</div></pre></td></tr></table></figure></p>
+<p>上面四个参数分别是 x轴偏移量 | y轴偏移量 | 模糊半径 | 颜色值<br>可以添加多个阴影，阴影值之间用逗号隔开。</p>
+<h3 id="3D文字效果"><a href="#3D文字效果" class="headerlink" title="3D文字效果"></a>3D文字效果</h3><p>我们可以通过设置<strong>模糊半径为0并多个阴影叠加</strong>达到3D文字的效果。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span>&#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">80px</span>;</div><div class="line">    <span class="attribute">font-weight</span>: <span class="number">700</span>;</div><div class="line">    <span class="attribute">text-shadow</span>: <span class="number">1px</span> <span class="number">1px</span> <span class="number">0</span> <span class="number">#ccc</span>, <span class="number">2px</span> <span class="number">2px</span> <span class="number">0</span> <span class="number">#ccc</span>,</div><div class="line">                         <span class="number">3px</span> <span class="number">3px</span> <span class="number">0</span> <span class="number">#ccc</span>, <span class="number">3px</span> <span class="number">3px</span> <span class="number">0</span> <span class="number">#ccc</span>,</div><div class="line">                         <span class="number">5px</span> <span class="number">5px</span> <span class="number">0</span> <span class="number">#ccc</span>, <span class="number">6px</span> <span class="number">6px</span> <span class="number">0</span> <span class="number">#ccc</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>text-shadow<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+<p style="font-size: 60px;
+            font-weight: 700;
+            text-shadow: 1px 1px 0 #ccc, 2px 2px 0 #ccc,
+                         3px 3px 0 #ccc, 4px 4px 0 #ccc,
+                         5px 5px 0 #ccc, 6px 6px 0 #ccc">text-shadow</p>
+
+<p>同时可以通过<strong>设置偏移量为负</strong>来达到相反方向3D文字效果。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span>&#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">80px</span>;</div><div class="line">    <span class="attribute">font-weight</span>: <span class="number">700</span>;</div><div class="line">    <span class="attribute">text-shadow</span>: -<span class="number">1px</span> -<span class="number">1px</span> <span class="number">0</span> <span class="number">#ccc</span>, -<span class="number">2px</span> -<span class="number">2px</span> <span class="number">0</span> <span class="number">#ccc</span>,</div><div class="line">                        -<span class="number">3px</span> -<span class="number">3px</span> <span class="number">0</span> <span class="number">#ccc</span>, -<span class="number">4px</span> -<span class="number">4px</span> <span class="number">0</span> <span class="number">#ccc</span>,</div><div class="line">                        -<span class="number">5px</span> -<span class="number">5px</span> <span class="number">0</span> <span class="number">#ccc</span>, -<span class="number">6px</span> -<span class="number">6px</span> <span class="number">0</span> <span class="number">#ccc</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p style="font-size: 60px;
+            font-weight: 700;
+            text-shadow: -1px -1px 0 #ccc, -2px -2px 0 #ccc,
+                         -3px -3px 0 #ccc, -4px -4px 0 #ccc,
+                         -5px -5px 0 #ccc, -6px -6px 0 #ccc">text-shadow</p>
+
+
+<h3 id="外发光文字"><a href="#外发光文字" class="headerlink" title="外发光文字"></a>外发光文字</h3><p>或者设置<strong>偏移量为0</strong>来实现外发光字的效果<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span>&#123;</div><div class="line">    <span class="attribute">display</span>: flex;</div><div class="line">        <span class="attribute">justify-content</span>: center;</div><div class="line">        <span class="attribute">align-items</span>: center;</div><div class="line">        <span class="attribute">border</span>: <span class="number">4px</span> solid <span class="number">#fff</span>;</div><div class="line">        <span class="attribute">border-radius</span>: <span class="number">20px</span>;</div><div class="line">        <span class="attribute">box-shadow</span>:<span class="number">0</span> <span class="number">0</span> <span class="number">5px</span> <span class="number">#fff</span>,</div><div class="line">        inset <span class="number">0</span> <span class="number">0</span> <span class="number">10px</span> <span class="number">#fff</span>,</div><div class="line">        <span class="number">0</span> <span class="number">0</span> <span class="number">20px</span> <span class="number">#08f</span>,</div><div class="line">        inset <span class="number">0</span> <span class="number">0</span> <span class="number">20px</span> <span class="number">#08f</span>,</div><div class="line">        <span class="number">0</span> <span class="number">0</span> <span class="number">4px</span> <span class="number">#08f</span>,</div><div class="line">        inset <span class="number">0</span> <span class="number">0</span> <span class="number">4px</span> <span class="number">#08f</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">h3</span>&#123;</div><div class="line">    <span class="attribute">font-family</span>: <span class="string">'Exo 2'</span>, sans-serif;</div><div class="line">            <span class="attribute">font-size</span>: <span class="number">60px</span>;</div><div class="line">            <span class="attribute">font-weight</span>: <span class="number">400</span>;</div><div class="line">            <span class="attribute">font-style</span>: italic;</div><div class="line">            <span class="attribute">color</span>: <span class="number">#fff</span>;</div><div class="line">            <span class="attribute">text-shadow</span>:</div><div class="line">                    -<span class="number">2px</span> -<span class="number">2px</span> <span class="number">10px</span> <span class="number">#fff</span>,</div><div class="line">                    <span class="number">0</span> <span class="number">0</span> <span class="number">20px</span> <span class="number">#f40</span>,</div><div class="line">                    <span class="number">0</span> <span class="number">0</span> <span class="number">40px</span> <span class="number">#f40</span>,</div><div class="line">                    <span class="number">0</span> <span class="number">0</span> <span class="number">60px</span> <span class="number">#f40</span>,</div><div class="line">                    <span class="number">0</span> <span class="number">0</span> <span class="number">80px</span> <span class="number">#f40</span>,</div><div class="line">                    <span class="number">0</span> <span class="number">0</span> <span class="number">10px</span> <span class="number">#f40</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span>text-shadow<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<div style="
+    height: 300px;
+    width:600px;
+    box-sizing:border-box;
+    padding:40px;
+    background: #000;
+"><br>    <div style="
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 4px solid #fff;
+            border-radius: 20px;
+            box-shadow:0 0 10px #fff,
+            inset 0 0 15px #fff,
+            0 0 30px #08f,
+            inset 0 0 30px #08f,
+            0 0 40px #08f,
+            inset 0 0 40px #08f;"><br>        <h3 style="
+                font-family: 'Exo 2', sans-serif;
+                font-size: 60px;
+                font-weight: 400;
+                font-style: italic;
+                color: #fff;
+                text-shadow:
+                        -2px -2px 10px #fff,
+                        0 0 20px #f40,
+                        0 0 40px #f40,
+                        0 0 60px #f40,
+                        0 0 80px #f40,
+                        0 0 10px #f40;">text-shadow</h3><br>    </div><br></div>
+
+<p>通过设置不同的值外加animation还可以达到不同的效果，我们这里不再过多讨论。<br>下面有我找的几个精彩案例，供大家参考：<br><a href="https://codepen.io/ImSeveNyU/pen/wRWLjw" target="_blank" rel="external">流光溢彩</a><br><a href="https://codepen.io/GeorgePark/pen/MrjbEr" target="_blank" rel="external">霓虹灯</a><br><a href="https://codepen.io/ImSeveNyU/pen/QzEXBj" target="_blank" rel="external">发光闪烁</a><br><a href="https://codepen.io/ImSeveNyU/pen/JwKQev" target="_blank" rel="external">彩色横纹</a><br><a href="https://codepen.io/Trinca/pen/NAvpWa" target="_blank" rel="external">交替闪烁</a><br><a href="https://codepen.io/erikjung/pen/XdWEKE" target="_blank" rel="external">多种有趣的效果</a></p>
+<h1 id="2-box-shadow"><a href="#2-box-shadow" class="headerlink" title="2.box-shadow"></a>2.box-shadow</h1><p>终于到了我们熟悉的box-shadow属性了。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span>&#123;</div><div class="line">    box-shadow:2px 2px 30px 3px #333  inset;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>box-shadow的值分别为： x轴偏移量 | y轴偏移量 | 模糊半径 | 扩张半径 | inset;</strong><br>其中 inset 可将默认值外部阴影（outset）改为内部阴影。<br>box-shadow也可以添加多个阴影，阴影值之间用逗号隔开。</p>
+<p>比如：通过inset内阴影制作一个球体。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span> &#123;</div><div class="line">    <span class="attribute">height</span>:<span class="number">100px</span>;</div><div class="line">    <span class="attribute">width</span>:<span class="number">100px</span>;</div><div class="line">    <span class="attribute">background</span>:<span class="number">#fff</span>;</div><div class="line">    <span class="attribute">border-radius</span>:<span class="number">50%</span>;</div><div class="line">    <span class="attribute">box-shadow</span>:<span class="number">2px</span> <span class="number">2px</span> <span class="number">30px</span> <span class="number">3px</span> <span class="number">#333</span>  inset;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<div style="height:100px;
+            width:100px;
+            background:#fff;
+            border-radius:50%;
+            box-shadow:5px 5px 50px 3px #444  inset;"></div>
+
+
+<p>同样，我们也可以通过控制box-shadow的值来实现不同的效果。<br><strong>1.单侧投影</strong><br>如果我们设置偏移量为0 模糊半径与负的扩张半径绝对值相等，那么我们遍看不到任何阴影。因为生成的阴影被包含在原来的元素之下，如下所示：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span> &#123;</div><div class="line">    <span class="attribute">box-shadow</span>:<span class="number">0</span> <span class="number">0</span> <span class="number">5px</span> -<span class="number">5px</span> <span class="number">#333</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<div style="
+           height:100px;
+           width:100px;
+           border:1px solid #000;
+           box-shadow:0 0 5px -5px #333;
+           "></div>
+
+<p>这个时候，我们给它<strong>设置一个方向的偏移量，即可实现单侧投影</strong>；<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span> &#123;</div><div class="line">    <span class="attribute">box-shadow</span>:-<span class="number">7px</span> <span class="number">0</span> <span class="number">5px</span> -<span class="number">5px</span> <span class="number">#333</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<div style="
+           height:100px;
+           width:100px;
+           border:1px solid #000;
+           box-shadow:-7px 0 5px -5px #333;
+           "></div>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span> &#123;</div><div class="line">    <span class="attribute">box-shadow</span>:<span class="number">7px</span> <span class="number">0</span> <span class="number">5px</span> -<span class="number">5px</span> <span class="number">#333</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<div style="
+           height:100px;
+           width:100px;
+           border:1px solid #000;
+           box-shadow:7px 0 5px -5px #333;
+           "></div>
+
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span> &#123;</div><div class="line">    <span class="attribute">box-shadow</span>:<span class="number">0</span> -<span class="number">7px</span> <span class="number">5px</span> -<span class="number">5px</span> <span class="number">#333</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<div style="
+           height:100px;
+           width:100px;
+           border:1px solid #000;
+           box-shadow:0 -7px 5px -5px #333;
+           "></div>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span> &#123;</div><div class="line">    <span class="attribute">box-shadow</span>:<span class="number">0</span> <span class="number">7px</span> <span class="number">5px</span> -<span class="number">5px</span> <span class="number">#333</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<div style="
+           height:100px;
+           width:100px;
+           border:1px solid #000;
+           box-shadow:0 7px 5px -5px #333;
+           "></div>
+
+
+<p><br></p>
+<p><strong>2.多重边框</strong><br>有的时候我们可能会给元素添加多重边框，但是border只能添加一个，外加一个outline属性来产生一个外层的边框。<br>但是如果我们需要3个或者以上的边框呢？<br>答案：可以利用<code>box-shadow</code>来解决。<br><strong>原理：将box-shadow属性的xy轴偏移量设置以及模糊值设置为0，得到的投影就像是一个实线边框，由于box-shadow支持逗号分隔语法，所以我们可以创建任意数量的投影。</strong><br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">    <span class="selector-tag">div</span>&#123;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">50px</span> auto;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">background-color</span>: pink;</div><div class="line">    <span class="attribute">border-radius</span>: <span class="number">50%</span>;</div><div class="line">    <span class="attribute">box-shadow</span>:</div><div class="line">        <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">6px</span> <span class="number">#F0E68C</span>,</div><div class="line">        <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">10px</span> <span class="number">#F5DEB3</span>,</div><div class="line">        <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">15px</span> <span class="number">#D2691E</span>,</div><div class="line">        <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">20px</span> <span class="number">#FFA500</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<div style="
+margin: 50px auto;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            border-radius: 50%;
+            box-shadow:
+                0 0 0 6px #F0E68C,
+                0 0 0 10px #F5DEB3,
+                0 0 0 15px #D2691E,
+                0 0 0 20px #FFA500;
+"></div>
+
+<p><strong>3.立体感按钮</strong><br>和上面的text-shadow一样，<strong>利用多重的box-shadow，设置扩张半径和阴影尺寸为0，不断偏移1px</strong>，就可以产生十分立体的感觉。</p>
+<div style="
+  width:200px;
+  font-size:20px;
+  font-weight:700;
+  line-height:68px;
+  text-align:center;
+  font-size:16px;
+  margin:50px auto;
+  color:#fff;
+  background:hsl(0, 0%, 60%);
+  cursor:pointer;
+  box-shadow:
+    1px 1px 0 0 hsl(0, 0%, 65%),
+    2px 2px 0 0 hsl(0, 0%, 70%),
+    3px 3px 0 0 hsl(0, 0%, 75%),
+    4px 4px 0 0 hsl(0, 0%, 80%),
+    5px 5px 0 0 hsl(0, 0%, 85%);
+">Button</div>
+
+
+<p><strong>4.立体投影</strong></p>
+<p>通过给伪元素添加阴影然后将伪元素transform改变位置大小角度来达到类似于立体的效果。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box2</span>&#123;</div><div class="line">    <span class="attribute">position</span>: relative;</div><div class="line">    <span class="attribute">width</span>: <span class="number">300px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">50px</span>;</div><div class="line">    <span class="attribute">background-color</span>: skyblue;</div><div class="line">    <span class="attribute">border-radius</span>: <span class="number">20px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box2</span><span class="selector-pseudo">::before</span>&#123;</div><div class="line">    <span class="attribute">content</span>: <span class="string">""</span>;</div><div class="line">    <span class="attribute">position</span>: absolute;</div><div class="line">    <span class="attribute">top</span>: <span class="number">60%</span>;</div><div class="line">    <span class="attribute">left</span>: <span class="number">5%</span>;</div><div class="line">    <span class="attribute">right</span>: <span class="number">5%</span>;</div><div class="line">    <span class="attribute">bottom</span>: <span class="number">0</span>;</div><div class="line">    <span class="attribute">border-radius</span>: <span class="number">10px</span>;</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(0,-15%) <span class="built_in">rotate</span>(3deg);</div><div class="line">    <span class="attribute">transform-origin</span>: center center;</div><div class="line">    <span class="attribute">background-color</span>: <span class="number">#ccc</span>;</div><div class="line">    <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">10px</span> <span class="number">6px</span> <span class="number">#ccc</span>;</div><div class="line">    <span class="attribute">z-index</span>: -<span class="number">1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="https://codepen.io/ImSeveNyU/pen/aPZdGr" target="_blank" rel="external">点击我查看效果</a></p>
+<p><strong>5.图片转换</strong><br>同样利用多重box-shadow可以实现任意图片转换<br>canvas提供了一个方法CanvasRenderingContext2D.getImageData可以获取到图片的每一个像素点的rgba值</p>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2018-12-16</span><i class="fa fa-tag"></i><a href="/tags/前端/" title="前端" class="tag">前端 </a><a href="/tags/CSS/" title="CSS" class="tag">CSS </a></div></div></div></div><div class="share"><div class="evernote"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></div><div class="weibo"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></div><div class="twitter"><a href="http://twitter.com/home?status=,http://yoursite.com/2018/12/16/CSS中的shadow阴影/,FiveSeveN,CSS中的shadow阴影,;" class="fa fa-twitter"></a></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a role="navigation" href="/2018/11/28/vscode快捷键速查/" title="vscode快捷键速查" class="btn">下一篇</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
