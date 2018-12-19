@@ -12,7 +12,6 @@ body{
   background-color: yellowgreen;
   color: green;
   cursor: pointer;
-  
   box-shadow: inset rgba(255, 254, 255, 0.6) 0 0.3em .3em,
     inset rgba(0, 0, 0, .15)0 -0.1em .3em,
     hsl(0, 0%, 60%)0 .1em 3px,
@@ -25,7 +24,6 @@ body{
   color: #fff;
   box-shadow: inset rgba(255, 255, 255, 0.6) 0 0.3em .3em,
     inset rgba(0, 0, 0, 0.2) 0 -0.1em .3em,
-    rgba(0, 0, 0, .4) 0 .1em 1px,
-    rgba(0, 0, 0, .2) 0 .2em 6px;
+    rgba(0, 0, 0, .4) 0 .1em 1px;
     transform: translateY(.2em);
 }
