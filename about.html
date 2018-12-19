@@ -54,7 +54,21 @@
       } else {
         buttonText.innerHTML = "点赞"
       }
-    }, false)
+    }, false);
+    var OriginTitile = document.title;
+    var titleTime;
+    document.addEventListener('visibilitychange', function() {
+    if (document.hidden) {
+        document.title = '😭我的主人不见了~ ' + OriginTitile;
+        clearTimeout(titleTime);
+    }
+    else {
+        document.title = '😄回来啦～~ ' + OriginTitile;
+        titleTime = setTimeout(function() {
+            document.title = OriginTitile;
+        }, 2000);
+    }
+});
   </script>
 </body>
 
