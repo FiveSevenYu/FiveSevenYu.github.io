@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>demo</title>
+  <title>About</title>
 </head>
 
 <body>
@@ -55,15 +55,16 @@
         buttonText.innerHTML = "点赞"
       }
     }, false);
+
     var OriginTitile = document.title;
     var titleTime;
     document.addEventListener('visibilitychange', function() {
     if (document.hidden) {
-        document.title = '😭我的主人不见了~ ' + OriginTitile;
+        document.title = '😭我的主人不见了~ ' + ' | ' + OriginTitile;
         clearTimeout(titleTime);
     }
     else {
-        document.title = '😄回来啦～~ ' + OriginTitile;
+        document.title = '😄回来啦～~ ' + ' | ' + OriginTitile;
         titleTime = setTimeout(function() {
             document.title = OriginTitile;
         }, 2000);
